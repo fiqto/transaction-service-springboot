@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@FeignClient(name = "obat", url = "http://obat-service-springboot-production.up.railway.app/")
+@FeignClient(name = "obat", url = "https://obat-service-springboot-production.up.railway.app/")
 public interface ObatFeignClient {
     @GetMapping("/list")
     List<ObatDTO> getAllObats();
