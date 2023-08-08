@@ -14,15 +14,12 @@ import java.util.List;
 @FeignClient(name = "obat", url = "https://crud-obat-production.up.railway.app/")
 public interface ObatFeignClient {
     @GetMapping("/list")
-    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('CASHIER')")
     List<ObatDTO> getAllObats();
 
     @GetMapping("/history/all")
-    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('CASHIER')")
     List<ObatHistoryDTO> getAllObatsHistory();
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('CASHIER')")
     ObatDTO getObatById(@PathVariable Long id);
 
 }
