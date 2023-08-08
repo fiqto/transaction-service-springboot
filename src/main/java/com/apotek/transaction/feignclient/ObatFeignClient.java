@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@FeignClient(name = "obat")
+@FeignClient(name = "obat", url = "https://crud-obat-production.up.railway.app")
 public interface ObatFeignClient {
     @GetMapping("/obat/list")
     @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('CASHIER')")
