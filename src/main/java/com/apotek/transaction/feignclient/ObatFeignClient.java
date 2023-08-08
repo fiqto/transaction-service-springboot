@@ -13,13 +13,13 @@ import java.util.List;
 @RestController
 @FeignClient(name = "obat", url = "https://obat-service-springboot-production.up.railway.app/")
 public interface ObatFeignClient {
-    @GetMapping("/list")
+    @GetMapping("/obat/list")
     List<ObatDTO> getAllObats();
 
-    @GetMapping("/history/all")
+    @GetMapping("/obat/history/all")
     List<ObatHistoryDTO> getAllObatsHistory();
 
-    @GetMapping("/{id}")
+    @GetMapping("/obat/{id}")
     ObatDTO getObatById(@PathVariable Long id);
 
 }
